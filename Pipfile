@@ -12,6 +12,7 @@ pylint = "*"
 check-manifest = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
+twine = "*"
 
 [requires]
 python_version = "3.8"
