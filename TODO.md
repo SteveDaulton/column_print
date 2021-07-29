@@ -14,6 +14,6 @@ Currently only tested on Linux.
 
 **Upload Targets**
 
-* GitHub (https://github.com/)  [done]
-* PyPi (https://pypi.org/)      [done]
-* ReadTheDocs (https://readthedocs.org/)  [done]
+* [GitHub](.) [done]
+* [PyPi](https://pypi.org/project/column-print/)  [done]
+* [ReadTheDocs](https://column-print.readthedocs.io/en/latest/)  [done]
