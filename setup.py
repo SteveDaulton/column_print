@@ -10,6 +10,8 @@ setup(
     author_email="steve.daulton@gmail.com",
     url="https://github.com/SteveDaulton/column_print",
     description='Terminal print strings in columns',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     py_modules=["column_print"],
     package_dir={'': 'src'},
 
@@ -31,8 +33,9 @@ setup(
 
     extras_require = {
         "dev": [
-            "pylint==2.9.5",
-            "check-manifest==0.46",
+            "pylint>=2.4.4",
+            "check-manifest>=0.40",
+            "sphink>=1.3",
         ],
     },
     platforms=[

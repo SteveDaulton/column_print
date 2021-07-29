@@ -1,14 +1,10 @@
 # column_print.py
 
-A collection of small utilities to aid printing data
-to a terminal window in columns.
+Utilities to aid printing data to a terminal window in columns.
 
-## Utilities:
+## ColumnPrinter
 
-### ColumnPrinter
-
-A context manager class to print successive print
-statements in columns.
+A context manager class to print successive print statements in columns.
 
 **Example Usage:**
 
@@ -41,14 +37,13 @@ with ColumnPrinter(2, 80) as cp:
 ## Supported Platforms:
 
 * Linux (Windows and macOS to be added)
-* Python 3.8 or Later
+* Python 3.6 or Later
 
 
 # Developing column_printer
 
-To install column_printer, along with the tools you
-need to develop and run tests, run the following in
-your virtualenv:
+To install column_printer, along with the tools you need to develop, test, and
+document, run the following in your virtualenv:
 
 ```bash
 $ pip install -e .[dev]
