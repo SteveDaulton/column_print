@@ -55,4 +55,4 @@ or, using pipenv:
 $ pipenv install -e .
 ```
 
-See also [TODO.txt](https://raw.githubusercontent.com/SteveDaulton/column_print/main/TODO.txt)
+See also [TODO.txt](../main/TODO.md)
