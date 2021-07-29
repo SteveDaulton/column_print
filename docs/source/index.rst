@@ -11,7 +11,12 @@ column_print documentation
    :caption: Contents:
 
 
-.. automodule:: column_print
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
 
 
 .. note::
