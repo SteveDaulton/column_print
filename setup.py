@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='column_print',
-    version='0.0.1',
+    version='0.0.2',
     author="Steve Daulton",
     author_email="steve.daulton@gmail.com",
     url="https://github.com/SteveDaulton/column_print",
@@ -21,8 +21,10 @@ setup(
         "Intended Audience :: Developers",
         "Intended Audience :: Education",
         "Operating System :: POSIX :: Linux",
-        "Programming Language :: Python :: 3.0",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.3",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",

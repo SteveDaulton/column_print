@@ -1,6 +1,10 @@
 # column_print.py
 
-Utilities to aid printing data to a terminal window in columns.
+A simple way to print short strings to a terminal in columns.
+
+Unlike many similar utilities, it is NOT necessary for the strings to be
+in a list before printing. column_print can print any sequence of strings
+without knowing the length or number of strings in advance.
 
 ## ColumnPrinter
 

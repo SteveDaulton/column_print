@@ -12,8 +12,3 @@ column_print documentation
 
 
 .. automodule:: column_print
-
-
-.. note::
-
-   This project is under active development.

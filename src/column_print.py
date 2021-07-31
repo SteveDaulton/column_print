@@ -1,6 +1,11 @@
-"""Utilities to print strings in columns.
+"""Print strings in columns.
 
-This module contains utilities to simplify printing to a Terminal in columns. 
+A simple way to print short strings to a terminal in columns.
+
+Unlike many similar utilities, it is NOT necessary for the strings to be
+in a list before printing. column_print can print any sequence of strings
+without knowing the length or number of strings in advance.
+
 
 ColumnPrinter
 -------------
@@ -15,6 +20,9 @@ columns : int, default=2
 
 width : int, default=80
     Total width of layout.
+    If not supplied, column_print will attempt to read the width of the
+    terminal (using shutil), and will fall back to 80 character with if
+    the terminal with cannot be determined.
 
 
 Note that if a string is longer than the width of a column, it will
@@ -26,8 +34,7 @@ Example
 
 1. Initialise ColumnPrinter with no arguments::
 
-    from modules.column_print import ColumnPrinter
-    
+    from column_print import ColumnPrinter
     with ColumnPrinter() as cp:
         cp("Hello")
         cp("World")
@@ -40,12 +47,10 @@ Prints::
     Goodbye                                  Moon
 
 
-2. Initialise ColumnPrinter with arguments::
+2. Initialise ColumnPrinter with keyword arguments::
 
-
-    from modules.column_print import ColumnPrinter
-    
-    with ColumnPrinter(columns=3) as cp:
+    from column_print import ColumnPrinter
+    with ColumnPrinter(columns=3, width=60) as cp:
         cp("Hello")
         cp("World")
         cp("Goodbye")
@@ -53,25 +58,52 @@ Prints::
 
 Prints::
 
-    Hello                       World                       Goodbye
+    Hello               World               Goodbye
     Moon
 
+
+3. Print unknown number of strings of unknown length::
+
+    from string import ascii_letters
+    from secrets import choice
+    from random import randint
+    from column_print import ColumnPrinter
+    with ColumnPrinter(columns=3, width=70) as cprint:
+        for i in range(randint(10, 20)):
+            length = randint(1, 20)
+            cprint(''.join(choice(ascii_letters) for _ in range(length)))
+
+Prints::
+
+    KPTyqazKuwoY           dGYCzBIAkju            aXQtXhw
+    JvnTfKkzabb            mcjZvqvXLdG            IadYqxaZ
+    cHm                    dReYhbhNkhEw           HaVaEkdjQNGHUIlywzjK
+    PCHXF
+
 """
+
+
+from shutil import get_terminal_size
+
 
 class ColumnPrinter:
     """Context manager class for printing columns.
 
     Attributes
     ----------
-    columns : int
+    columns : int, default=2
         Number of columns in layout.
-    width : int
+    width : int, default=80
         Total width of layout (in characters).
+        If not supplied, ColumnPrinter attempts to calculate width of terminal.
 
     """
-    def __init__(self, columns=2, width=80):
+    def __init__(self, columns=2, width=None):
         self.columns = columns
+        # default width to terminal with or 80 if width can't be determined.
         self.width = width
+        if width is None:
+            self.width = get_terminal_size().columns
         self._col_count = 0
         self._col_width = self.width // self.columns
 
@@ -87,11 +119,10 @@ class ColumnPrinter:
             print('')
             self._col_count = 0
         # If not filling line, calculate padding.
+        pad = 0
         if self._col_count + col_required < self.columns:
             pad = min(self.width, self._col_width * col_required)
-        else:
-            pad = 0
-        print('{:<{width}s}'.format(txt, width=pad), end='')
+        print(txt.ljust(pad), end='')
         # Increment column count.
         if self._col_count >= self.columns:
             self._col_count = col_required
