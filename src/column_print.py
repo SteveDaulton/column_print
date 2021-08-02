@@ -112,6 +112,7 @@ class ColumnPrinter:
 
     def __call__(self, txt):
         """Print in columns."""
+        txt = str(txt)
         col_required = 1 + (len(txt) // self._col_width)
         col_remain = self.columns - self._col_count
         # If can't fit on line, start new line.

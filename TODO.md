@@ -1,13 +1,13 @@
 # TODO
 
-## Documentation
-
-Using Sphinx, ReStructured Text. [done]
+## Support for printing numbers.
 
 
-## Cross-Platform Support
+## Tested platforms:
 
-Currently only tested on Linux.
+Linux, Python 3.8.10
+Windows, Python 3.3.2
+MacOS, Python 3.9.6
 
 
 ## Upload
