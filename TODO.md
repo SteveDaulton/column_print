@@ -1,6 +1,30 @@
 # TODO
 
-## Support for printing numbers.
+
+## Add "print_list" function
+and update docs accordingly.
+
+Note that this function is only for making long  lists more
+easily readable. It is NOT intended for printing tables.
+For printing tables, see:
+https://pypi.org/project/tabulate/
+
+
+## Testing
+Can't have too much testing :-)
+
+Should work with any version of Python >= 3.0
+Should work on any platform.
+
+
+## Bugs
+Report bugs to:
+https://github.com/SteveDaulton/column_print/issues
+
+
+# DONE
+
+## Support for printing numbers. [done]
 
 
 ## Tested platforms:
