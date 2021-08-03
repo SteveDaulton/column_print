@@ -43,7 +43,7 @@ setup(
         'dev': [
             'pylint>=2.4.4',
             'check-manifest>=0.40',
-            'sphink>=1.3',
+            'sphinx>=1.3',
         ],
     },
     platforms=[
