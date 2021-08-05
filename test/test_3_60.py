@@ -7,18 +7,19 @@
 from column_print import ColumnPrinter
 
 
-print('****************')
+print('***********************')
 print('Three column')
 print('60 char width')
-print('****************')
+print('Column separator = "| "')
+print('***********************')
 
 
-with ColumnPrinter(3,60) as cp:
-    cp("Hello")
-    cp("World")
-    cp("Goodbye")
-    cp("Moon")
-    cp("Hello")
-    cp("World")
-    cp("Goodbye")
-    cp("Moon")
+with ColumnPrinter(3,60, "| ") as cprint:
+    cprint("Hello")
+    cprint("World")
+    cprint("Goodbye")
+    cprint("Moon")
+    cprint("Hello")
+    cprint("World")
+    cprint("Goodbye")
+    cprint("Moon")

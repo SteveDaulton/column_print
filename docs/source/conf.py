@@ -15,7 +15,7 @@
 # sys.path.insert(0, os.path.abspath('.'))
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../src/'))
+sys.path.append(os.path.abspath('../../src/'))
 
 
 # -- Project information -----------------------------------------------------
@@ -25,7 +25,7 @@ copyright = '2021, Steve Daulton'
 author = 'Steve Daulton'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1.0'
+release = '0.1.1'
 
 
 # -- General configuration ---------------------------------------------------

@@ -1,14 +1,27 @@
-.. column_print documentation master file, created by
-   sphinx-quickstart on Thu Jul 29 01:15:04 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+column_print
+============
 
-column_print documentation
-==========================
+This module provides a simple way to print multiple short strings to a terminal
+in columns.
+
+Unlike many similar utilities, it is not necessary for the strings to be in a
+list before printing, though 'print_list' is also provided for printing lists.
+
+**ColumnPrinter:** A context manager class, can print any sequence of strings
+without knowing the length or number of strings in advance.
+
+**print_list:** A function, prints a list to the terminal in equally spaced
+columns.
+
+Note that this module is NOT intended for printing tables, but simply to
+display a long list more conveniently. For printing tables,
+`tabulate <https://pypi.org/project/tabulate/>`_ or
+`columnize <https://pypi.org/project/columnize/>`_ may be more suitable.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
-
-.. automodule:: column_print
+   module
+   class
+   print-list
+   examples
+   examples2

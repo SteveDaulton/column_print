@@ -9,6 +9,7 @@ from column_print import ColumnPrinter
 
 print('****************')
 print('Two column test:')
+print('(default layout)')
 print('****************')
 
 with ColumnPrinter() as cp:
@@ -19,7 +20,7 @@ with ColumnPrinter() as cp:
     cp("Now is the time for all good men")
     cp("to come to the aid of the party.")
     cp("Goodbye")
-    cp("Now is the time for all good men to come to the aid of the party.")
+    cp("The quick brown fox jumped over the lazy dog.")
     cp("Moon")
     cp("Hello")
     cp("World")
